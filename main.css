@@ -1,31 +1,41 @@
+@font-face {
+    font-family: "Bebas";
+    src: url(fonts/BebasNeue-Regular.woff2);
+}
 header {
     padding: 10px 20px 15px;
     /* margin-bottom: 30px; */
+    display: flex;
+    align-items: center ;
+    justify-content: space-around;
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
 }
 
 nav a {
     text-decoration-color: transparent;
     color: #113482;
     padding: 15px;
+    font-family: "Montserrat";
+    font-weight: 60;
 }
 
 nav a:hover {
     text-decoration-color: #8a2be2;
     /* color: #8a2be2; */
-    color: red;
-}
-
-#hero-shot{
-    width: 100vw;
-    height: calc(100vh - 125.5px);
-    position: relative;
-    background-image: url(images/map.avif);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top right;
+    color: rgb(255, 0, 64);
 
 }
-    
+.header-icons {
+    display: flex;
+    width: 172px;
+    justify-content: center;
+    gap: 15px;
+}
 
 .overlay {
     background-color:none;
@@ -41,10 +51,11 @@ nav a:hover {
     z-index: 10;
     color: rgb(24, 24, 21);
     position: relative;
-    font-size: 16px;
+    font-size: 40px;
     text-align: center;
     padding: 10px;
     text-transform: uppercase;
+    font-family: "Bebas";
 
 }
 .hero-shot-container {
@@ -53,10 +64,13 @@ nav a:hover {
     margin-top: 200px;
     width: fit-content;
     margin: 10px auto;
+    display: flex;
+    align-items: center;
 }
 .hero-shot-container span {
     color: rgb(233, 244, 244);
-    font-size: 16px;
+    font-size: 25px;
+    font-family: "Bebas";
 }
  button {
 background-color: aliceblue;
@@ -64,6 +78,8 @@ padding: 5px 18px;
 margin-left: 5px;
 text-transform: uppercase;
 cursor: pointer;
+font-family: "Bebas";
+font-size: 25px;
 }
  button:hover {
     background-color: black;
@@ -72,11 +88,17 @@ cursor: pointer;
 .excercises-container {
     margin: 30px auto;
     width: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
 }
 .see-excercises {
     text-transform: uppercase;
     font-size: 16px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
 }
 .section-title {
     font-size: 22px;
@@ -84,6 +106,6 @@ cursor: pointer;
     font-weight: bolder;
     margin: 30px auto 20px;
     width: fit-content;
-    display: block;
-
+    display: block
+    
 }
