@@ -106,6 +106,30 @@ font-size: 25px;
     font-weight: bolder;
     margin: 30px auto 20px;
     width: fit-content;
-    display: block
+    display: block   
+}
+.student-section {
+    display: grid;
+    grid-template-columns: repeat(3. 1fr);
+    margin: 20px;
+    column-gap: 20px;
+    row-gap: 40px;
+}
+.post-card {
+    height: 300px;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid 
+}
+.post-card .image-container {
+    width: 100%;
+    height: auto;
+}
+.post-card .image-container img {
+    width: 100%;
+}
+.section-eat {
+    display: flex;
+    grid-template-columns: repeat(4, 1fr);
     
 }
