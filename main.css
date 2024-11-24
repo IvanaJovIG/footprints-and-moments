@@ -33,7 +33,7 @@ nav a:hover {
 .header-icons {
     display: flex;
     width: 172px;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 15px;
 }
 
@@ -84,6 +84,7 @@ font-size: 25px;
  button:hover {
     background-color: black;
     color: azure;
+    transition: all 0.5s ease-out;
 }
 .excercises-container {
     margin: 30px auto;
