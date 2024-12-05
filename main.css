@@ -1,162 +1,576 @@
-@font-face {
+font-face {
     font-family: "Bebas";
     src: url(fonts/BebasNeue-Regular.woff2);
-}
-header {
+  }
+  
+  header {
     padding: 10px 20px 15px;
     /* margin-bottom: 30px; */
     display: flex;
-    align-items: center ;
-    justify-content: space-around;
-}
-
-nav {
+    align-items: center;
+  }
+  
+  nav {
     flex-grow: 1;
     display: flex;
     justify-content: center;
-}
-
-nav a {
+  }
+  
+  nav a {
     text-decoration-color: transparent;
-    color: #113482;
-    padding: 15px;
+    color: #1134B2;
+    padding: 0 15px;
     font-family: "Montserrat";
-    font-weight: 60;
-}
-
-nav a:hover {
+    font-weight: 600;
+  }
+  
+  nav a:hover {
     text-decoration-color: #8a2be2;
-    /* color: #8a2be2; */
-    color: rgb(255, 0, 64);
-
-}
-.header-icons {
+    color: #8a2be2;
+  }
+  
+  .header-icons {
     display: flex;
     width: 172px;
     justify-content: flex-end;
     gap: 15px;
-}
-
-.overlay {
-    background-color:none;
+  }
+  
+  .header-icons a img {
+    filter: brightness(0) saturate(100%) invert(16%) sepia(76%) saturate(3532%) hue-rotate(226deg) brightness(85%) contrast(102%);
+  }
+  
+  .header-icons a:hover img {
+    filter: brightness(0) saturate(100%) invert(24%) sepia(100%) saturate(2079%) hue-rotate(259deg) brightness(86%) contrast(107%);
+  }
+  
+  .header-icons {
+    display: flex;
+    width: 172px;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .header-icons a img {
+    filter: brightness(0) saturate(100%) invert(16%) sepia(76%) saturate(3532%) hue-rotate(226deg) brightness(85%) contrast(102%);
+  }
+  
+  .header-icons a:hover img {
+    filter: brightness(0) saturate(100%) invert(24%) sepia(100%) saturate(2079%) hue-rotate(259deg) brightness(86%) contrast(107%);
+  }
+  
+  
+  
+  #hero-shot {
+    width: 100vw;
+    height: calc(100vh - 79px);
+    position: relative;
+    background-image: url(images/pexels-taryn-elliott-5405598.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top right;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .overlay {
+    background-color: #000;
     opacity: 0.6;
     width: 100vw;
     height: 100%;
-    position:absolute;
+    position: absolute;
     top: 0;
     left: 0;
-    
-}
-#hero-shot p {
+  }
+  
+  #hero-shot p {
     z-index: 10;
-    color: rgb(24, 24, 21);
+    color: #fff;
     position: relative;
     font-size: 40px;
     text-align: center;
     padding: 10px;
     text-transform: uppercase;
     font-family: "Bebas";
-
-}
-.hero-shot-container {
+  }
+  
+  .hero-shot-container {
     z-index: 10;
     position: relative;
-    margin-top: 200px;
     width: fit-content;
     margin: 10px auto;
     display: flex;
     align-items: center;
-}
-.hero-shot-container span {
-    color: rgb(233, 244, 244);
+  }
+  
+  .hero-shot-container span {
+    color: #fff;
     font-size: 25px;
+    text-transform: uppercase;
     font-family: "Bebas";
-}
- button {
-background-color: aliceblue;
-padding: 5px 18px;
-margin-left: 5px;
-text-transform: uppercase;
-cursor: pointer;
-font-family: "Bebas";
-font-size: 25px;
-}
- button:hover {
-    background-color: black;
-    color: azure;
+  }
+  
+  button {
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: "Bebas";
+    font-size: 25px;
+    transition: all 0.5s ease-in;
+  }
+  
+  button:hover {
+    background-color: #000;
+    color: #fff;
     transition: all 0.5s ease-out;
-}
-.excercises-container {
+  }
+  
+  .exercises-container {
     margin: 30px auto;
     width: max-content;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
-}
-.see-excercises {
+  }
+  
+  .see-exercises {
     text-transform: uppercase;
     font-size: 16px;
     width: 100%;
     text-align: center;
     margin-bottom: 15px;
-}
-.section-title {
+  }
+  
+  .section-title {
     font-size: 22px;
     text-transform: capitalize;
     font-weight: bolder;
     margin: 30px auto 20px;
     width: fit-content;
-    display: block   
-}
-.student-section {
+    display: block;
+  }
+  
+  .student-section {
     display: grid;
-    grid-template-columns: repeat(3. 1fr);
+    grid-template-columns: repeat(3, 1fr);
     margin: 20px;
     column-gap: 20px;
     row-gap: 40px;
-}
-.post-card {
-    height: 300px;
+    max-height: 0;
+    height: 0;
+    overflow: hidden;
+    transition: max-height .75s ease-in-out;
+  }
+  
+  .js-student-section {
+    max-height: 1000px;
+    height: 100%;
+    transition: max-height .75s ease-in-out;
+  }
+  
+  .student-section .section-title {
+    grid-column: span 3;
+  }
+  
+  .post-card {
     padding: 15px;
     border-radius: 15px;
-    border: 1px solid 
-}
-.post-card .image-container {
+    border: 2px solid #000;
+  }
+  
+  .post-card .image-container {
     width: 100%;
-    height: auto;
-}
-.post-card .image-container img {
-    width: 100%;
-}
-.section-eat {
+    height: 150px;
+    overflow: hidden;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px 15px 0 0;
+  }
+  
+  .post-card .image-container img {
+    width: 100%;
+  }
+  
+  .post-card-container {
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
-}
- 
-@media screen { 
-    .post-card-container {
-        grid-template-columns: repeat(1fr);
-        padding: 0 15px;
-    }
-    
-    .post-card-container .section-title {
-        grid-column: span 2;
-    }
-
-} 
-.buttoms-section {
-    display: flex;
     gap: 15px;
+    margin: 40px;
+  }
+  
+  .post-card-container .section-title {
+    grid-column: span 4;
+  }
+  
+  .buttons-section {
+    display: flex;
+    gap: 30px;
     align-items: center;
     justify-content: center;
     margin: 10px auto;
-}
-
-.buttoms-section .student-name {
-    padding: 5px 19px;
+  }
+  
+  .buttons-section .student-name {
+    padding: 7px 10px 5px;
     font-family: "Bebas";
-    color: aliceblue;
-    background-color: #8a2be2;
+    font-size: 25px;
+    color: #fff;
+    background-color: #000;
     border-radius: 5px;
-}
+    cursor: pointer;
+    border: 3px solid #000;
+    transition: all 0.8s cubic-bezier(.31, 1.11, .41, -0.08);
+  }
+  
+  .student-name:hover {
+    background-color: #fff;
+    color: #000;
+    transition: all 0.8s cubic-bezier(.31, 1.11, .41, -0.08);
+  }
+  
+  .js-student-name {
+    background-color: #fff !important;
+    color: #000 !important;
+    transition: all 0.8s cubic-bezier(.31, 1.11, .41, -0.08) !important;
+  }
+  
+  .info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 180px;
+  }
+  
+  .info-container p {
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    line-height: 20px;
+    max-height: 40px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    font-family: "Montserrat";
+    font-size: 16px;
+    text-align: center;
+    flex-grow: 1;
+    height: 100%;
+  }
+  
+  .info-container h2 {
+    font-size: 20px;
+    font-family: "Bebas";
+    line-height: 22px;
+    height: 44px;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    max-height: 44px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    margin: 15px 0;
+    text-align: center;
+  }
+  
+  .info-container button {
+    margin: 15px auto 0;
+  }
+  
+  .student-footer-buttons {
+    display: flex;
+    gap: 30px;
+    margin: 40px auto;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  
+  .btn-container {
+    height: 80px;
+    width: 230px;
+    position: relative;
+  }
+  
+  .btn {
+    cursor: pointer;
+    transition-property: all;
+    transition-duration: .6s;
+    transition-timing-function: ease;
+  }
+  
+  
+  .student-footer-btn {
+    color: #1134B2;
+    font-family: "Montserrat";
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 16px;
+    width: 200px;
+    position: relative;
+    padding: 15px 60px;
+    text-decoration: none;
+    transition: all .6s ease-in;
+    background-color: transparent;
+    outline: none;
+    border: 1.5px solid transparent;
+  }
+  
+  .student-footer-btn:hover {
+    font-weight: 700;
+    transition: all .6s ease-in-out;
+  
+  }
+  
+  .student-footer-btn::before {
+    border: 1.5px solid transparent;
+    top: 0;
+    content: "";
+    position: absolute;
+    transition: all .6s ease-in-out;
+    width: 0;
+    left: 15%;
+  }
+  
+  .student-footer-btn:hover::before {
+    border-color: #1134B2;
+    transition: width .6s ease-in-out;
+    width: 70%;
+  }
+  
+  .student-footer-btn::after {
+    border: 1.5px solid transparent;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    transition: all .6s ease-in-out;
+    width: 0;
+    right: 15%;
+  }
+  
+  .student-footer-btn:hover::after {
+    border-color: #1134B2;
+    transition: width .6s ease-in-out;
+    width: 70%;
+  }
+  
+  .student-footer-btn img {
+    height: 50px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  
+  
+  .student-footer-buttons {
+    display: flex;
+    gap: 30px;
+    margin: 40px auto;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .btn-container {
+    height: 80px;
+    width: 230px;
+    position: relative;
+  }
+  
+  .btn {
+    cursor: pointer;
+    transition-property: all;
+    transition-duration: .6s;
+    transition-timing-function: ease;
+  }
+  
+  .student-footer-btn {
+    color: #1134B2;
+    font-family: "Montserrat";
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 16px;
+    width: 200px;
+    position: relative;
+    padding: 15px 60px;
+    text-decoration: none;
+    transition: all.6s ease-in;
+    background-color: transparent;
+    outline: none;
+    border: 1.5px solid transparent;
+  }
+  
+  .student-footer-btn:hover {
+    font-weight: 700;
+    transition: all .6s ease-in-out;
+  }
+  
+  .student-footer-btn::before {
+    border: 1.5px solid transparent;
+    top: 0;
+    content: "";
+    position: absolute;
+    transition: all .6s ease-in-out;
+    width: 0;
+    left: 15%;
+  }
+  
+  .student-footer-btn:hover::before {
+    border-color: #1134B2;
+    transition: width .6s ease-in-out;
+    width: 70%;
+  }
+  
+  .student-footer-btn::after {
+    border: 1.5px solid transparent;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    transition: all .6s ease-in-out;
+    width: 0;
+    right: 15%;
+  }
+  
+  .student-footer-btn:hover::after {
+    border-color: #1134B2;
+    transition: width .6s ease-in-out;
+    width: 70%;
+  }
+  
+  .student-footer-btn img {
+    height: 50px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  
+  /* NOV CHAS */
+  
+  @media screen and (max-width: 768px) {
+    .post-card-container {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0 15px;
+  
+    }
+  
+    .post-card-container .section-title {
+      grid-column: span 2;
+    }
+  
+    .buttons-section {
+      flex-wrap: wrap;
+    }
+  
+    header {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      position: fixed;
+      z-index: 15;
+    }
+  
+    .logo {
+      order: 1;
+    }
+  
+    .header-icons {
+      order: 2;
+      justify-content: flex-end;
+    }
+  
+    nav {
+      order: 3;
+      width: 100%;
+      margin: 10px 0;
+      position: sticky;
+    }
+  
+    main {
+      padding-top: 118px;
+    }
+  
+    .student-section {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .student-section .section-title {
+      grid-column: span 2;
+    }
+  
+    .post-card .image-container img {
+      height: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .header-icons {
+      width: auto;
+    }
+  }
+  
+  
+
+  /* Ivana */
+  
+  
+  .ivana-footer{ 
+    background-color: rgba(0, 0, 0, 0.5);
+    background-image: url('images/Background\ Iv\ foooter.jpg');
+    background-size: cover; 
+    background-position: contain;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(141, 236, 205);
+    padding: 15px 0;
+    text-align: center; 
+    color: #161616; 
+    font-size: 17px;
+    font-family: "Montserrat";
+    position: relative; 
+  
+  }
+
+  .logo-img {
+    padding-bottom: 20px;
+    font-size: 18px;
+  }
+  
+  .footer-text {
+    position: center;
+    padding-top: 20px;
+    font-size: 13px;
+  }
+
+  .ivana-footer a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 10px;
+  }
+  
+  
+  
+  
+  .footer-bottom {
+    display: flex;
+    justify-content: center;
+    color: aqua;
+    background-color: black;
+    height: 50px;
+    width: 100%;
+    font-size: large;
+    font-weight: 500;
+    padding: 20px 10px 5px 10px;
+  }
+  
+  .js-exercise {
+    display: flex !important;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
